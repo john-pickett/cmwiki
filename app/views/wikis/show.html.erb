@@ -1,4 +1,12 @@
-<p id="notice"><%= notice %></p>
+<p>
+  <strong>Name:</strong>
+  <%= @wiki.name %>
+</p>
 
-<%= link_to 'Edit', edit_wiki_path(@wiki) %> |
-<%= link_to 'Back', wikis_path %>
+<p>
+  <strong>Body:</strong>
+  <%= @wiki.body %>
+</p>
+
+<%= link_to 'Edit This Wiki', edit_wiki_path(@wiki) %> |
+<%= link_to 'Back to All Wikis', wikis_path %>

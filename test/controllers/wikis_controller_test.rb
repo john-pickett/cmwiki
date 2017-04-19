@@ -17,7 +17,7 @@ class WikisControllerTest < ActionDispatch::IntegrationTest
 
   test "should create wiki" do
     assert_difference('Wiki.count') do
-      post wikis_url, params: { wiki: {  } }
+      post wikis_url, params: { wiki: { body: @wiki.body, name: @wiki.name, user_id: @wiki.user_id } }
     end
 
     assert_redirected_to wiki_url(Wiki.last)
@@ -34,7 +34,7 @@ class WikisControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update wiki" do
-    patch wiki_url(@wiki), params: { wiki: {  } }
+    patch wiki_url(@wiki), params: { wiki: { body: @wiki.body, name: @wiki.name, user_id: @wiki.user_id } }
     assert_redirected_to wiki_url(@wiki)
   end
 
