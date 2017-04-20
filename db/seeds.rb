@@ -12,8 +12,9 @@ users = User.all
 # Create Wikis
 50.times do
   Wiki.create!(
-  name: Faker::StarWars.character,
+  name: Faker::HarryPotter.character,
   body: Faker::StarWars.quote,
+  author: Faker::Friends.character,
   user: users.sample,
   category: WikiDetails.wiki_category
   )

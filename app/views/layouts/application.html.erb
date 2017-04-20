@@ -13,7 +13,7 @@
       <div>
         <ul class="nav nav-tabs">
           <li><%= link_to "Home", root_path%></li>
-          <li><%= link_to "Wikis Index", wikis_path %></li>
+          <li><%= link_to "Books Index", wikis_path %></li>
             <% if current_user %>
               <li class="pull-right"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
               <li class="pull-right"><%= link_to "Hi, #{current_user.email}", edit_user_registration_path %></li>

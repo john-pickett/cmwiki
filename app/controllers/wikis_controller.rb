@@ -5,6 +5,7 @@ class WikisController < ApplicationController
   # GET /wikis.json
   def index
     @wikis = Wiki.all
+    @wikis_alpha = @wikis.order('name ASC')
   end
 
   # GET /wikis/1
