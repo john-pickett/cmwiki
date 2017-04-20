@@ -16,6 +16,7 @@ class WikisController < ApplicationController
   # GET /wikis/new
   def new
     @wiki = Wiki.new
+    @user = current_user
   end
 
   # GET /wikis/1/edit
@@ -26,6 +27,7 @@ class WikisController < ApplicationController
   # POST /wikis.json
   def create
     @wiki = Wiki.new(wiki_params)
+    @user = current_user
 
     respond_to do |format|
       if @wiki.save
@@ -70,6 +72,6 @@ class WikisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wiki_params
-      params.require(:wiki).permit(:name, :body, :user_id)
+      params.require(:wiki).permit(:name, :body, :user_id, :author, :category)
     end
 end
