@@ -21,8 +21,6 @@ users = User.all
 end
 wikis = Wiki.all
 
-
-
 # Update first user to me
 user = User.first
 user.update_attributes!(

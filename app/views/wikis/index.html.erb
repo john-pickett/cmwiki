@@ -17,7 +17,7 @@
         <% @wikis_alpha.each do |wiki| %>
           <tr>
             <td><%= link_to wiki.name, wiki %></td>
-            <td><%= wiki.body %></td>
+            <td><%= truncate(wiki.body, :length => 80) %></td>
             <td><%= wiki.author %></td>
             <td><%= wiki.category %></td>
             <td><%= link_to 'Show', wiki %></td>
