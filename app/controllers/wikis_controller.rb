@@ -5,7 +5,12 @@ class WikisController < ApplicationController
   # GET /wikis.json
   def index
     @wikis = Wiki.all
-    @wikis_alpha = @wikis.order('name ASC')
+    if params[:order].in? %w[name author category]
+      @wikis.merge!( Wiki.order('? DESC', params[:order]) )
+    end
+    @wikis_title = @wikis.order('name ASC')
+    @wikis_author = @wikis.order('author ASC')
+    @wikis_category = @wikis.order('category ASC')
   end
 
   # GET /wikis/1
