@@ -25,7 +25,8 @@ wikis = Wiki.all
 user = User.first
 user.update_attributes!(
   email: "john.pickett@gmail.com",
-  password: "password"
+  password: "password",
+  role: "awesome"
 )
 
 puts "Seed finished"

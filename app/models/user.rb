@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :wikis
+  before_save { self.email = email.downcase }
+  before_save { self.role ||= :member }
+
+  enum role: [:member, :admin, :awesome]
 end
