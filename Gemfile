@@ -33,6 +33,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 # Faker for database seeding
 gem 'faker'
+# Red Carpet for markdown on wikis
+gem 'redcarpet'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
