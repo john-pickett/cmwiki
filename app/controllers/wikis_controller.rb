@@ -4,13 +4,8 @@ class WikisController < ApplicationController
   # GET /wikis
   # GET /wikis.json
   def index
-    @wikis = Wiki.all
-    if params[:order].in? %w[name author category]
-      @wikis.merge!( Wiki.order('? DESC', params[:order]) )
-    end
-    @wikis_title = @wikis.order('name ASC')
-    @wikis_author = @wikis.order('author ASC')
-    @wikis_category = @wikis.order('category ASC')
+    @wikis = Wiki.order(params[:sort])
+
   end
 
   # GET /wikis/1
@@ -79,4 +74,7 @@ class WikisController < ApplicationController
     def wiki_params
       params.require(:wiki).permit(:name, :body, :user_id, :author, :category)
     end
+
+
+
 end
