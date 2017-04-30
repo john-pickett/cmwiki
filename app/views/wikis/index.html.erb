@@ -1,7 +1,7 @@
 <h1>Books Index</h1>
 
 <div class="row">
-  <div class="col-md-10">
+  <div class="col-md-8">
     <table>
       <thead>
         <tr>
@@ -25,9 +25,12 @@
     </table>
   </div>
 
-  <div class="col-md-2">
+  <div class="col-md-4">
+    <h4 class="text-center"><strong>Don't See The Book You're Looking For?</strong></h4>
     <% if current_user %>
-      <%= link_to 'Create New Wiki', new_wiki_path, class: 'btn btn-success' %>
+      <p class="text-center"><%= link_to 'Create New Book Summary', new_wiki_path, class: 'btn btn-success' %></p>
+    <% else %>
+      <h4 class="text-center"><%= link_to "Login", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %> to contribute!</h4>
     <% end %>
   </div>
 </div>

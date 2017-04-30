@@ -1,6 +1,10 @@
-<h1>Editing Wiki</h1>
-
-<%= render 'edit_wiki', wiki: @wiki %>
-
-<%= link_to 'Back To Wiki', @wiki %> |
-<%= link_to 'Books Index', wikis_path %>
+<div class="container">
+  <h1>Edit: <%= @wiki.name %></h1>
+    <div class="col-md-8">
+      <%= render 'edit_wiki', wiki: @wiki %>
+  </div>
+  <div class="col-md-4 pull-right">
+    <%= link_to 'Back To Wiki', @wiki, class: 'btn btn-success' %> |
+    <%= link_to 'Books Index', wikis_path, class: 'btn btn-info' %>
+  </div>
+</div>
