@@ -3,6 +3,8 @@ require 'wiki_details'
 # Create Users
 10.times do
   User.create!(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: Faker::Number.number(8)
   )
@@ -24,6 +26,8 @@ wikis = Wiki.all
 # Update first user to me
 user = User.first
 user.update_attributes!(
+  first_name: "John",
+  last_name: "Pickett",
   email: "john.pickett@gmail.com",
   password: "password",
   role: "awesome"

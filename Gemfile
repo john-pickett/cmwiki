@@ -33,7 +33,7 @@ gem 'devise'
 gem 'faker'
 # Red Carpet for markdown on wikis
 gem 'redcarpet'
-# Trix editor
+# Trix editor for wysiwyg wikis
 gem 'trix'
 
 
