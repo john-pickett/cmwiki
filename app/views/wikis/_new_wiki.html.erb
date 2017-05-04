@@ -23,7 +23,7 @@
 
   <div class="form-group">
     <%= f.label :category %><br>
-    <%= f.text_field :category %>
+    <%= f.select :category, [["Science", "science"], ["Literature", "literature"], ["Math", "math"]], :include_blank => true %>
   </div>
 
   <div class="form-group">
