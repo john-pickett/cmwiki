@@ -33,6 +33,8 @@ gem 'devise'
 gem 'faker'
 # Red Carpet for markdown on wikis
 gem 'redcarpet'
+# Trix editor
+gem 'trix'
 
 
 # Use Redis adapter to run Action Cable in production

@@ -28,7 +28,8 @@
 
   <div class="form-group">
     <%= f.label :body %><br>
-    <%= f.text_area :body, rows: 8, :id => "editor" %>
+    <%= f.hidden_field :body, rows: 8, :id => "editor" %>
+    <trix-editor input="editor"></trix-editor>
   </div>
 
   <% if authorized?(current_user, @wiki) %>
