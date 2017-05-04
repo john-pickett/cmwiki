@@ -32,6 +32,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :public_access %><br>
+    <%= f.check_box :public_access %>
+  </div>
+
+  <div class="form-group">
     <%= f.hidden_field :user_id, :value => @user.id %>
   </div>
 

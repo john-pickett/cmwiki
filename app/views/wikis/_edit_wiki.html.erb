@@ -31,6 +31,13 @@
     <%= f.text_area :body, rows: 8 %>
   </div>
 
+  <% if authorized?(current_user, @wiki) %>
+    <div class="form-group">
+      <%= f.label :public_access %><br>
+      <%= f.check_box :public_access %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Save Changes", class: 'btn btn-success' %>
   </div>

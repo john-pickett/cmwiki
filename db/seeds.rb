@@ -31,4 +31,5 @@ user.update_attributes!(
 
 puts "Seed finished"
 puts "#{User.count} users created"
+puts "First user updated to John"
 puts "#{Wiki.count} wikis created"
