@@ -1,5 +1,7 @@
 <h1>New Wiki</h1>
-
-<%= render 'new_wiki', wiki: @wiki %>
-
-<%= link_to 'Back', wikis_path %>
+<div class="col-md-8">
+  <%= render 'new_wiki', wiki: @wiki %>
+</div>
+<div class="col-md-4 pull-right">
+  <%= link_to 'Back', wikis_path, class: 'btn btn-info' %>
+</div>

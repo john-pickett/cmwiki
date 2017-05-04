@@ -1,11 +1,16 @@
 <h1>Welcome to the Charlotte Mason Wiki</h1>
 
-<h2>Random Wiki</h2>
-<h4><%= @random_wiki.name %> by <%= @random_wiki.author %></h4>
-<p><%= truncate(@random_wiki.body, :length => 200) %>
-<%= link_to "Read More...", wiki_path(@random_wiki)  %></p>
-
-<h2>Most Recent Book</h2>
-<h4><%= @most_recent_wiki.name %> by <%= @most_recent_wiki.author %></h4>
-<p><%= truncate(@most_recent_wiki.body, :length => 200) %>
-<%= link_to "Read More...", wiki_path(@most_recent_wiki)  %></p>
+<div class="row">
+  <div class="col-md-6">
+    <h2>Random Book</h2>
+    <h4><%= @random_wiki.name %> by <%= @random_wiki.author %></h4>
+    <p><%= raw(@random_wiki.body.truncate(200)) %>
+    <%= link_to "Read More...", wiki_path(@random_wiki)  %></p>
+  </div>
+  <div class="col-md-6">
+    <h2>Most Recent Book</h2>
+    <h4><%= @most_recent_wiki.name %> by <%= @most_recent_wiki.author %></h4>
+    <p><%= raw(@most_recent_wiki.body.truncate(200)) %>
+    <%= link_to "Read More...", wiki_path(@most_recent_wiki)  %></p>
+  </div>
+</div>

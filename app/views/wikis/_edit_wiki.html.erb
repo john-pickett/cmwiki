@@ -28,7 +28,7 @@
 
   <div class="form-group">
     <%= f.label :body %><br>
-    <%= f.text_area :body, rows: 8 %>
+    <%= f.text_area :body, rows: 8, :id => "froala-editor" %>
   </div>
 
   <% if authorized?(current_user, @wiki) %>
@@ -42,3 +42,7 @@
     <%= f.submit "Save Changes", class: 'btn btn-success' %>
   </div>
 <% end %>
+
+<script>
+  $('textarea#froala-editor').froalaEditor();
+</script>

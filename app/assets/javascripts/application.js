@@ -15,6 +15,9 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+//= require froala_editor.min.js
+
+$('selector').froalaEditor();
 
 var statshound = {};
 
