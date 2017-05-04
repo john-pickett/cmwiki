@@ -33,8 +33,7 @@ gem 'devise'
 gem 'faker'
 # Red Carpet for markdown on wikis
 gem 'redcarpet'
-# Froala WSYIWYG Editor
-gem 'wysiwyg-rails'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

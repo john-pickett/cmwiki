@@ -19,7 +19,7 @@
     <%= link_to 'Delete This Wiki', @wiki, method: :delete, data: { confirm: 'Are you sure you want to delete this wiki?' }, class: 'btn btn-danger'%>
   <% end %>
   <h3>Wiki Info</h3>
-  <p>Created by: <%= @wiki_owner.email %></p>
+  <p>Created by: </p>
   <p>Date: <%= @wiki.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
   <p>Last Edited: <%= @wiki.updated_at.to_date.to_formatted_s(:long_ordinal) %></p>
 </div>
