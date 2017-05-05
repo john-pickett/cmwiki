@@ -1,5 +1,5 @@
 class WikisController < ApplicationController
-  before_action :set_wiki, only: [:show, :edit, :update, :destroy]
+  before_action :set_wiki, only: [:show, :edit, :update, :destroy, :history]
 
   # GET /wikis
   # GET /wikis.json
@@ -12,6 +12,7 @@ class WikisController < ApplicationController
   # GET /wikis/1.json
   def show
     @wiki_owner = User.find(@wiki.user_id)
+
   end
 
   # GET /wikis/new
@@ -63,6 +64,10 @@ class WikisController < ApplicationController
       format.html { redirect_to wikis_url, notice: 'Wiki was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def history
+    @versions = PaperTrail::Version.order('created_at DESC')
   end
 
   private

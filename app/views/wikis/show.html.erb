@@ -21,5 +21,7 @@
   <h3>Wiki Info</h3>
   <p>Created by: <%= @wiki_owner.first_name %> <%= @wiki_owner.last_name %></p>
   <p>Date: <%= @wiki.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
-  <p>Last Edited: <%= @wiki.updated_at.to_date.to_formatted_s(:long_ordinal) %></p>
+  <p>Most Recent Edit: <%= @wiki.updated_at.to_date.to_formatted_s(:long_ordinal) %></p>
+  <p>History:</p>
+  <%= link_to "History", wikis_history_path %>
 </div>
