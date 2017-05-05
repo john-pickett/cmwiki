@@ -31,10 +31,10 @@ gem 'bootstrap-sass'
 gem 'devise'
 # Faker for database seeding
 gem 'faker'
-# Red Carpet for markdown on wikis
-gem 'redcarpet'
 # Trix editor for wysiwyg wikis
 gem 'trix'
+# Paper Trail for wiki versioning
+gem 'paper_trail'
 
 
 # Use Redis adapter to run Action Cable in production
