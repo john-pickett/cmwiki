@@ -70,6 +70,13 @@ class WikisController < ApplicationController
     @versions = PaperTrail::Version.order('created_at DESC')
   end
 
+  def get_version_body(input)
+    items = input.split()
+    items.each do |item|
+      puts item
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_wiki
