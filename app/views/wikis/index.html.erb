@@ -8,7 +8,6 @@
           <th><%= link_to "Name", :sort => "name" %></th>
           <th><%= link_to "Author", :sort => "author" %></th>
           <th><%= link_to "Category", :sort => "category" %></th>
-          <th>Preview</th>
         </tr>
       </thead>
 
@@ -18,7 +17,6 @@
             <td><%= link_to wiki.name, wiki %></td>
             <td><%= wiki.author %></td>
             <td><%= wiki.category %></td>
-            <td><%= raw(wiki.body.truncate(100)) %></td>
             </tr>
         <% end %>
       </tbody>
