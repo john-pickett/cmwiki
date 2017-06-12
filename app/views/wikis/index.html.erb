@@ -2,10 +2,14 @@
 
 <div class="row">
   <div class="col-md-8">
+    <%= form_tag(wikis_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Books and Authors" %>
+      <%= submit_tag "Search", :name => nil %>
+    <% end %>
     <table>
       <thead>
         <tr>
-          <th><%= link_to "Name", :sort => "name" %></th>
+          <th><%= link_to "Title", :sort => "name" %></th>
           <th><%= link_to "Author", :sort => "author" %></th>
           <th><%= link_to "Category", :sort => "category" %></th>
         </tr>
@@ -17,7 +21,7 @@
             <td><%= link_to wiki.name, wiki %></td>
             <td><%= wiki.author %></td>
             <td><%= wiki.category %></td>
-            </tr>
+          </tr>
         <% end %>
       </tbody>
     </table>
