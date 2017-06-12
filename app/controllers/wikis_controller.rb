@@ -4,7 +4,11 @@ class WikisController < ApplicationController
   # GET /wikis
   # GET /wikis.json
   def index
-    @wikis = Wiki.order(params[:sort])
+    if params[:search]
+      @wikis = Wiki.search(params[:search]).order("created_at DESC")
+    else
+      @wikis = Wiki.order(params[:sort])
+    end
 
   end
 
