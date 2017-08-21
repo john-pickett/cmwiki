@@ -14,11 +14,16 @@ users = User.all
 # Create Wikis
 50.times do
   Wiki.create!(
-  name: Faker::HarryPotter.character,
-  body: Faker::StarWars.quote,
+  title: Faker::Book.title,
   author: Faker::Friends.character,
+  published_date: Faker::Date.backward(10000),
+  body: "This is the body",
   user: users.sample,
-  category: WikiDetails.wiki_category
+  category: WikiDetails.wiki_category,
+  setting: "Here's the setting",
+  recommended_age: "Ages 10 to 18",
+  sensitive_content: "There is no sensitive content in this book",
+  book_synopsis: "Here is a lovely summary of the overall plot points and themes from the book."
   )
 end
 wikis = Wiki.all

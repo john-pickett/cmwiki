@@ -1,8 +1,19 @@
 <h1><%= @wiki.title %></h1>
 <div class="col-md-8">
-  <h3>By: <%= @wiki.author %> </h3>
+  <h3>Written By: <%= @wiki.author %> </h3>
+  <h4>Published: <%= @wiki.published_date %> </h4>
+  <h4>Book Category: <%= @wiki.category %> </h4>
+  <p><strong>Setting:</strong></p>
+  <p><%= @wiki.setting %> </p>
+  <p><strong>Age Range:</strong></p>
+  <p><%= @wiki.recommended_age %> </p>
+  <p><strong>Sensitive Content</strong></p>
+  <p> <%= @wiki.sensitive_content %> </p>
+  <p><strong>Book Synopsis</strong></p>
+  <p> <%= @wiki.book_synopsis %> </p>
 
-  <%= raw(@wiki.body) %>
+  <p><strong>Chapter Summaries</strong></p>
+  <p> <%= raw(@wiki.body) %> </p>
 
 </div>
 <div class="col-md-4 pull-right">
