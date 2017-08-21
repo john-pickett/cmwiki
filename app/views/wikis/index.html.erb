@@ -9,7 +9,7 @@
     <table>
       <thead>
         <tr>
-          <th><%= link_to "Title", :sort => "name" %></th>
+          <th><%= link_to "Title", :sort => "title" %></th>
           <th><%= link_to "Author", :sort => "author" %></th>
           <th><%= link_to "Category", :sort => "category" %></th>
         </tr>
@@ -18,7 +18,7 @@
       <tbody>
         <% @wikis.each do |wiki| %>
           <tr>
-            <td><%= link_to wiki.name, wiki %></td>
+            <td><%= link_to wiki.title, wiki %></td>
             <td><%= wiki.author %></td>
             <td><%= wiki.category %></td>
           </tr>

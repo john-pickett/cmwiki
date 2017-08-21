@@ -1,4 +1,4 @@
-<h1><%= @wiki.name %></h1>
+<h1><%= @wiki.title %></h1>
 <div class="col-md-8">
   <h3>By: <%= @wiki.author %> </h3>
 
@@ -8,9 +8,7 @@
 <div class="col-md-4 pull-right">
   <% if !current_user %>
     <%= link_to 'Login To Edit', new_user_session_path, class: 'btn btn-info' %><br>
-  <% elsif current_user && @wiki.public_access == false %>
-      <p>Private Wiki</p><br>
-  <% elsif (current_user && @wiki.public_access == true) || authorized?(current_user, @wiki) %><br>
+  <% elsif current_user || authorized?(current_user, @wiki) %><br>
     <%= link_to 'Edit This Wiki', edit_wiki_path(@wiki), class: 'btn btn-success' %><br>
   <% end %>
 
