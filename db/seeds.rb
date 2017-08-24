@@ -28,6 +28,16 @@ users = User.all
 end
 wikis = Wiki.all
 
+# Create Chapter Summaries
+500.times do
+  Chapter.create!(
+  name: "Chapter Summary",
+  body: "Here is a lovely summary of this chapter, complete with setting, characters, and plot points.",
+  wiki: wikis.sample
+  )
+end
+chapters = Chapter.all
+
 # Update first user to me
 user = User.first
 user.update_attributes!(
@@ -42,3 +52,4 @@ puts "Seed finished"
 puts "#{User.count} users created"
 puts "First user updated to John"
 puts "#{Wiki.count} wikis created"
+puts "#{Chapter.count} chapter summaries created"

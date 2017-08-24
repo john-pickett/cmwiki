@@ -12,8 +12,12 @@
   <p><strong>Book Synopsis</strong></p>
   <p> <%= @wiki.book_synopsis %> </p>
 
-  <p><strong>Chapter Summaries</strong></p>
-  <p> <%= raw(@wiki.body) %> </p>
+  <h4>Chapter Summaries</h4>
+  
+  <% @chapters.each do | chapter | %>
+    <p><strong><%= chapter.name %></strong></p>
+    <p><%= chapter.body %></p>
+  <% end %>
 
 </div>
 <div class="col-md-4 pull-right">

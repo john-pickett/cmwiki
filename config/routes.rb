@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :chapters
   resources :wikis
   devise_for :users
   root 'wikis#index'

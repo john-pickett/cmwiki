@@ -16,6 +16,7 @@ class WikisController < ApplicationController
   # GET /wikis/1.json
   def show
     @wiki_owner = User.find(@wiki.user_id)
+    @chapters = @wiki.chapters
 
   end
 
