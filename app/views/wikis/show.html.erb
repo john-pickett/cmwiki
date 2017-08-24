@@ -13,12 +13,20 @@
   <p> <%= @wiki.book_synopsis %> </p>
 
   <h4>Chapter Summaries</h4>
-  
-  <% @chapters.each do | chapter | %>
-    <p><strong><%= chapter.name %></strong></p>
-    <p><%= chapter.body %></p>
-  <% end %>
 
+
+  <div id="chapterSummaries">
+
+    <% @chapters.each do | chapter | %>
+      <div class="chapter">
+        <p><strong><%= chapter.name %></strong></p>
+        <button class="btn btn-primary pull-right" type="button" data-toggle="collapse" data-target="#chapter-summaries" aria-expanded="false" aria-controls="collapseExample">
+          Hide
+        </button>
+        <p id="chapter-summaries" class="collapse"><%= chapter.body %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
 <div class="col-md-4 pull-right">
   <% if !current_user %>
