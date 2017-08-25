@@ -29,10 +29,10 @@ end
 wikis = Wiki.all
 
 # Create Chapter Summaries
-500.times do
+500.times do |i|
   Chapter.create!(
-  name: "Chapter Summary",
-  body: "Here is a lovely summary of this chapter, complete with setting, characters, and plot points.",
+  name: "Chapter #{i}",
+  body: "Here is a lovely summary of chapter #{i}, complete with setting, characters, and plot points.",
   wiki: wikis.sample
   )
 end
