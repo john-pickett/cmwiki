@@ -16,6 +16,7 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    @user = current_user
   end
 
   # GET /books/1/edit
@@ -62,6 +63,18 @@ class BooksController < ApplicationController
     end
   end
 
+  # Used for the versioning/history of each book
+  def history
+    @versions = PaperTrail::Version.order('created_at DESC')
+  end
+
+  def get_version_body(input)
+    items = input.split()
+    items.each do |item|
+      puts item
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
@@ -70,6 +83,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author, :published_date, :category, :setting, :recommended_age, :sensitive_content, :book_synopsis)
+      params.require(:book).permit(:title, :author, :user_id, :published_date, :category, :setting, :recommended_age, :sensitive_content, :book_synopsis)
     end
 end
