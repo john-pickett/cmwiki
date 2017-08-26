@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>Published date:</strong>
+  <%= @book.published_date %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @book.category %>
+</p>
+
+<p>
+  <strong>Setting:</strong>
+  <%= @book.setting %>
+</p>
+
+<p>
+  <strong>Recommended age:</strong>
+  <%= @book.recommended_age %>
+</p>
+
+<p>
+  <strong>Sensitive content:</strong>
+  <%= @book.sensitive_content %>
+</p>
+
+<p>
+  <strong>Book synopsis:</strong>
+  <%= @book.book_synopsis %>
+</p>
+
+<div id="chapterSummaries">
+  <div id="accordion" role="tablist">
+
+  <% @chapters.each_with_index do | chapter, index | %>
+    <div class="card">
+      <div class="card-header" role="tab" id="heading<%=index%>">
+        <h5 class="mb-0">
+          <a data-toggle="collapse" href="#collapse<%=index%>">
+            <%= chapter.name %>
+          </a>
+        </h5>
+      </div>
+
+      <div id="collapse<%=index%>" class="collapse" role="tabpanel">
+        <div class="card-body">
+          <%= chapter.body %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

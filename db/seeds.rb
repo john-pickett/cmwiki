@@ -28,12 +28,29 @@ users = User.all
 end
 wikis = Wiki.all
 
+# Create Books
+50.times do
+  Book.create!(
+  title: Faker::Book.title,
+  author: Faker::Friends.character,
+  published_date: Faker::Date.backward(10000),
+  body: "This is the body",
+  user: users.sample,
+  category: WikiDetails.wiki_category,
+  setting: "Here's the setting",
+  recommended_age: "Ages 10 to 18",
+  sensitive_content: "There is no sensitive content in this book",
+  book_synopsis: "Here is a lovely summary of the overall plot points and themes from the book."
+  )
+end
+books = Book.all
+
 # Create Chapter Summaries
 500.times do |i|
   Chapter.create!(
   name: "Chapter #{i}",
   body: "Here is a lovely summary of chapter #{i}, complete with setting, characters, and plot points.",
-  wiki: wikis.sample
+  book: books.sample
   )
 end
 chapters = Chapter.all
@@ -52,4 +69,5 @@ puts "Seed finished"
 puts "#{User.count} users created"
 puts "First user updated to John"
 puts "#{Wiki.count} wikis created"
+puts "#{Book.count} books created"
 puts "#{Chapter.count} chapter summaries created"

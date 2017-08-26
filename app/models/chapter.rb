@@ -1,3 +1,3 @@
 class Chapter < ApplicationRecord
-  belongs_to :wiki
+  belongs_to :book
 end

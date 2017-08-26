@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  author: MyString
+  publish_date: MyString
+  category: MyString
+  setting: MyText
+  recommended_age: MyString
+  sensitive_content: MyText
+  book_synopsis: MyText
+
+two:
+  title: MyString
+  author: MyString
+  publish_date: MyString
+  category: MyString
+  setting: MyText
+  recommended_age: MyString
+  sensitive_content: MyText
+  book_synopsis: MyText

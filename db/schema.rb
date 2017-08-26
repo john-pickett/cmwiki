@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824113301) do
+ActiveRecord::Schema.define(version: 20170826044736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "books", force: :cascade do |t|
+    t.string   "title"
+    t.string   "author"
+    t.text     "body"
+    t.string   "published_date"
+    t.string   "category"
+    t.text     "setting"
+    t.string   "recommended_age"
+    t.text     "sensitive_content"
+    t.text     "book_synopsis"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_books_on_user_id", using: :btree
+  end
 
   create_table "chapters", force: :cascade do |t|
     t.string   "name"
@@ -21,6 +37,8 @@ ActiveRecord::Schema.define(version: 20170824113301) do
     t.integer  "wiki_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "book_id"
+    t.index ["book_id"], name: "index_chapters_on_book_id", using: :btree
     t.index ["wiki_id"], name: "index_chapters_on_wiki_id", using: :btree
   end
 
@@ -70,6 +88,8 @@ ActiveRecord::Schema.define(version: 20170824113301) do
     t.index ["user_id"], name: "index_wikis_on_user_id", using: :btree
   end
 
+  add_foreign_key "books", "users"
+  add_foreign_key "chapters", "books"
   add_foreign_key "chapters", "wikis"
   add_foreign_key "wikis", "users"
 end
