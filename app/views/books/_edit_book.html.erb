@@ -57,11 +57,20 @@
     <%= f.text_area :book_synopsis %>
   </div>
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <%= f.label :body %>
     <%= f.hidden_field :body, rows: 8, :id => "editor" %>
     <trix-editor input="editor"></trix-editor>
-  </div>
+  </div> -->
+
+  <%= f.fields_for :chapters do |chapter_form| %>
+    <div class="form-group">
+      <%= chapter_form.label "Chapter Summaries" %>
+      <p><em>This is for the first chapter summary.</em></p>
+      <%= chapter_form.text_field :title %>
+      <%= chapter_form.text_area :summary %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit "Save Changes", class: 'btn btn-success' %>

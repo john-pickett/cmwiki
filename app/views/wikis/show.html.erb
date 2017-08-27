@@ -23,14 +23,14 @@
         <div class="card-header" role="tab" id="heading<%=index%>">
           <h5 class="mb-0">
             <a data-toggle="collapse" href="#collapse<%=index%>">
-              <%= chapter.name %>
+              <%= chapter.title %>
             </a>
           </h5>
         </div>
 
         <div id="collapse<%=index%>" class="collapse" role="tabpanel">
           <div class="card-body">
-            <%= chapter.body %>
+            <%= chapter.summary %>
           </div>
         </div>
       </div>

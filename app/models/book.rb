@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
   belongs_to :user
   has_many :chapters
+  accepts_nested_attributes_for :chapters, allow_destroy: true
 
   has_paper_trail
 
