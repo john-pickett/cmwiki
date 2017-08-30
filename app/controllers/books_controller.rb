@@ -14,7 +14,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    @chapters = @book.chapters
+    @chapters = @book.chapters.order('id ASC')
   end
 
   # GET /books/new

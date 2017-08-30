@@ -35,6 +35,8 @@ gem 'faker'
 gem 'trix'
 # Paper Trail for wiki versioning
 gem 'paper_trail'
+# Cocoon for nested forms
+gem 'cocoon'
 
 
 # Use Redis adapter to run Action Cable in production

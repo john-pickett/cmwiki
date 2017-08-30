@@ -61,21 +61,15 @@
     <%= f.text_area :book_synopsis %>
   </div>
 
-  <!-- <div class="form-group">
-    <%= f.label :body %><br>
-    <%= f.hidden_field :body, rows: 8, :id => "editor" %>
-    <trix-editor input="editor"></trix-editor>
-  </div> -->
 
-  <!-- <% render 'new_chapter' %> -->
-  <%= f.fields_for :chapters do |chapter_form| %>
-    <div class="form-group">
-      <%= chapter_form.label "Chapter Summaries" %>
-      <p><em>This is for the first chapter summary.</em></p>
-      <%= chapter_form.text_field :title %>
-      <%= chapter_form.text_area :summary %>
-    </div>
-  <% end %>
+  <div id="chapters">
+    <%= f.fields_for :chapters do |chapter_form| %>
+      <%= render 'chapter_fields', f: chapter_form %>
+      <div class="links">
+        <%= link_to_add_association 'add chapter', f, :chapters, class: 'btn btn-info' %>
+      </div>
+    <% end %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Save Changes", class: 'btn btn-success' %>
