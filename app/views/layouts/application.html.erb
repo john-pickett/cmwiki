@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>A Charlotte Mason Community</title>
+    <title>Living Books</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,11 +10,10 @@
   </head>
 
   <body>
-    <div class="container">
-      <div>
+      <nav class="navbar-nav">
         <ul class="nav nav-tabs">
-          <li><%= link_to "Home", root_path%></li>
-          <li><%= link_to "Books Index", books_path %></li>
+          <li class="<%= 'active' if params[:controller] == 'welcome' %>"><%= link_to "Home", root_path%></li>
+          <li class="<%= 'active' if params[:controller] == 'books' %>"><%= link_to "Books Index", books_path %></li>
             <% if current_user %>
               <li class="pull-right"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
               <li class="pull-right"><%= link_to "Hi, #{current_user.first_name}", edit_user_registration_path %></li>
@@ -23,20 +22,22 @@
               <li class="pull-right"><%= link_to 'Login', new_user_session_path %></li>
             <% end %>
         </ul>
-      </div>
+      </nav>
+      <div class="container-fluid">
       <% if notice %>
         <p class="alert alert-success"><%= notice %></p>
       <% end %>
       <% if alert %>
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
-
-      <%= yield %>
+      <main>
+        <%= yield %>
+      </main>
       </div>
-      <footer>
+      <footer class="page-footer">
         <p class="text-center">Copyright &copy 2017 | Living Books </p>
       </footer>
-
+      <script>window.mdc.autoInit();</script>
 
   </body>
 </html>

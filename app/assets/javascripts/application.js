@@ -17,3 +17,4 @@
 //= require_tree .
 //= require trix
 //= require cocoon
+//= require material

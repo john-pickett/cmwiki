@@ -1,16 +1,18 @@
-<h1>Welcome to the Charlotte Mason Wiki</h1>
+<div class="hero-main text-center">
+  <h1>Welcome to Living Books</h2>
+  <%= image_tag 'hero-image.jpg' %>
 
-<div class="row">
-  <div class="col-md-6">
-    <h2>Random Book</h2>
-    <h4><%= @random_wiki.name %> by <%= @random_wiki.author %></h4>
-    <p><%= raw(@random_wiki.body.truncate(200)) %>
-    <%= link_to "Read More...", wiki_path(@random_wiki)  %></p>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4 mdc-card text-center">
+      <h2>What Are Living Books?</h2>
+      <p>Cupcake ipsum dolor sit amet cake chocolate bar croissant. Chocolate bar candy brownie cake muffin liquorice. Donut liquorice biscuit dragée candy sweet dragée cheesecake sweet. Macaroon muffin caramels icing sweet bear claw. Jelly-o cookie muffin cheesecake. Dragée candy sweet. Wafer chupa chups cake fruitcake wafer marzipan ice cream icing apple pie. Cheesecake oat cake cotton candy caramels gingerbread bear claw sweet roll liquorice caramels. Icing topping tootsie roll apple pie chupa chups dessert sweet roll. Oat cake powder cookie wafer jelly icing ice cream gummies chocolate. Sweet apple pie jelly beans pie. Cupcake lemon drops dessert pudding. Pudding macaroon sesame snaps soufflé.</p>
+    </div>
+    <div class="col-md-4 mdc-card text-center">
+      <h2>How To Use This Site</h2>
+      <p>Cupcake ipsum dolor sit amet cake chocolate bar croissant. Chocolate bar candy brownie cake muffin liquorice. Donut liquorice biscuit dragée candy sweet dragée cheesecake sweet. Macaroon muffin caramels icing sweet bear claw. Jelly-o cookie muffin cheesecake. Dragée candy sweet. Wafer chupa chups cake fruitcake wafer marzipan ice cream icing apple pie. Cheesecake oat cake cotton candy caramels gingerbread bear claw sweet roll liquorice caramels. Icing topping tootsie roll apple pie chupa chups dessert sweet roll. Oat cake powder cookie wafer jelly icing ice cream gummies chocolate. Sweet apple pie jelly beans pie. Cupcake lemon drops dessert pudding. Pudding macaroon sesame snaps soufflé.</p>
+    </div>
+    <div class="col-md-2"></div>
   </div>
-  <div class="col-md-6">
-    <h2>Most Recent Book</h2>
-    <h4><%= @most_recent_wiki.name %> by <%= @most_recent_wiki.author %></h4>
-    <p><%= raw(@most_recent_wiki.body.truncate(200)) %>
-    <%= link_to "Read More...", wiki_path(@most_recent_wiki)  %></p>
-  </div>
+
 </div>
