@@ -1,64 +1,79 @@
 <p id="notice"><%= notice %></p>
 <h1><%= @book.title %></h1>
+<h2>By: <%= @book.author %></h2>
 <div class="col-md-8">
 
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
-
-<p>
-  <strong>Published date:</strong>
-  <%= @book.published_date %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @book.category %>
-</p>
-
-<p>
-  <strong>Setting:</strong>
-  <%= @book.setting %>
-</p>
-
-<p>
-  <strong>Recommended age:</strong>
-  <%= @book.recommended_age %>
-</p>
-
-<p>
-  <strong>Sensitive content:</strong>
-  <%= @book.sensitive_content %>
-</p>
-
-<p>
-  <strong>Book synopsis:</strong>
-  <%= @book.book_synopsis %>
-</p>
-
-<div id="chapterSummaries">
-  <div id="accordion" role="tablist">
-
-  <% @chapters.each_with_index do | chapter, index | %>
-    <div class="card">
-      <div class="card-header" role="tab" id="heading<%=index%>">
-        <h5 class="mb-0">
-          <a data-toggle="collapse" href="#collapse<%=index%>">
-            <%= chapter.title %>
-          </a>
-        </h5>
-      </div>
-
-      <div id="collapse<%=index%>" class="collapse" role="tabpanel">
-        <div class="card-body">
-          <%= chapter.summary %>
-        </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mdc-card">
+        <h4>Published date:</h4>
+        <%= @book.published_date %>
       </div>
     </div>
-    <% end %>
+
+    <div class="col-md-6">
+      <div class="mdc-card">
+        <h4>Category:</h4>
+        <%= @book.category %>
+      </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mdc-card">
+        <h4>Setting:</h4>
+        <%= @book.setting %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="mdc-card">
+        <h4>Recommended age:</h4>
+        <%= @book.recommended_age %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mdc-card">
+        <h4>Sensitive content:</h4>
+        <%= @book.sensitive_content %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="mdc-card">
+        <h4>Book synopsis:</h4>
+        <%= @book.book_synopsis %>
+      </div>
+    </div>
+  </div>
+
+  <div id="chapterSummaries">
+    <div id="accordion" role="tablist">
+
+    <% @chapters.each_with_index do | chapter, index | %>
+      <div class="mdc-card">
+        <div class="card-header" role="tab" id="heading<%=index%>">
+          <h4 class="mb-0">
+            <a data-toggle="collapse" href="#collapse<%=index%>">
+              <%= chapter.title %>
+              <span class="pull-right">AA</span>
+            </a>
+          </h4>
+        </div>
+
+        <div id="collapse<%=index%>" class="collapse" role="tabpanel">
+          <div class="card-body">
+            <%= chapter.summary %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      </div>
+    </div>
 </div> <!-- end of left column -->
 
 <div class="col-md-4 pull-right">

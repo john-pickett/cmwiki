@@ -11,51 +11,86 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :book_title %>
-    <p><em>Example: Huckleberry Finn</em></p>
-    <%= f.text_field :title %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mdc-card">
+        <div class="form-group">
+          <h4><%= f.label :book_title %></h4>
+          <p><em>Example: Huckleberry Finn</em></p>
+          <%= f.text_field :title %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="mdc-card">
+        <div class="form-group">
+          <h4><%= f.label :author %></h4>
+          <p><em>Example: Mark Twain</em></p>
+          <%= f.text_field :author %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :author %>
-    <p><em>Example: Mark Twain</em></p>
-    <%= f.text_field :author %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mdc-card">
+        <div class="form-group">
+          <h4><%= f.label :category %></h4>
+          <%= f.collection_select :category, Book::CATEGORIES, :to_s, :to_s, :include_blank => true %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="mdc-card">
+        <div class="form-group">
+          <h4><%= f.label :published_date %></h4>
+          <p><em>Example: 1884</em></p>
+          <%= f.text_field :published_date %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :category %><br>
-    <%= f.collection_select :category, Book::CATEGORIES, :to_s, :to_s, :include_blank => true %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mdc-card">
+        <div class="form-group">
+          <h4><%= f.label :recommended_age %></h4>
+          <%= f.collection_select :recommended_age, Book::AGE_RANGES, :to_s, :to_s, :include_blank => true %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="mdc-card">
+        <div class="form-group">
+          <h4><%= f.label :setting %></h4>
+          <p><em>Example: The United States in the 1840s.</em></p>
+          <%= f.text_field :setting %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :published_date %>
-    <p><em>Example: 1884</em></p>
-    <%= f.text_field :published_date %>
-  </div>
 
-  <div class="form-group">
-    <%= f.label :recommended_age %><br>
-    <%= f.collection_select :recommended_age, Book::AGE_RANGES, :to_s, :to_s, :include_blank => true %>
-  </div>
+    <div class="mdc-card">
+      <div class="form-group">
+        <h4><%= f.label :sensitive_content %></h4>
+        <p><em>Use this area to discuss any content or language that some might find objectionable, if applicable.</em></p>
+        <%= f.text_area :sensitive_content %>
+      </div>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :setting %>
-    <p><em>Example: The United States in the 1840s.</em></p>
-    <%= f.text_field :setting %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :sensitive_content %>
-    <p><em>Use this area to discuss any content or language that some might find objectionable, if applicable.</em></p>
-    <%= f.text_area :sensitive_content %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :book_synopsis %>
-    <p><em>Give a brief overview of the main plot points of the book.</em></p>
-    <%= f.text_area :book_synopsis %>
-  </div>
+    <div class="mdc-card">
+      <div class="form-group">
+        <h4><%= f.label :book_synopsis %></h4>
+        <p><em>Give a brief overview of the main plot points of the book.</em></p>
+        <%= f.text_area :book_synopsis %>
+      </div>
+    </div>
 
   <!-- <div class="form-group">
     <%= f.label :body %>
@@ -64,15 +99,17 @@
   </div> -->
 
   <%= f.fields_for :chapters do |chapter_form| %>
-    <div class="form-group">
-      <%= chapter_form.label "Chapter Summaries" %>
-      <p><em>This is for the first chapter summary.</em></p>
-      <%= chapter_form.text_field :title %>
-      <%= chapter_form.text_area :summary %>
-    </div>
+      <div class="mdc-card">
+        <div class="form-group">
+          <%= chapter_form.label "Chapter Summaries" %>
+          <p><em>This is a chapter summary.</em></p>
+          <%= chapter_form.text_field :title %>
+          <%= chapter_form.text_area :summary %>
+        </div>
+      </div>
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Save Changes", class: 'btn btn-success' %>
+    <%= f.submit "Save Changes", class: 'btn btn-success pull-right' %>
   </div>
 <% end %>
