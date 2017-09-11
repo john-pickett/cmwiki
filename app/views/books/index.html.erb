@@ -34,8 +34,11 @@
   <% if current_user %>
     <%= link_to 'New Book', new_book_path, class: 'btn btn-success' %>
   <% end %>
-  <%= form_tag(books_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Books and Authors" %>
-    <%= submit_tag "Search", :name => nil %>
-  <% end %>
+  <div class="mdc-card">
+    <h4>Search Books and Authors</h4>
+    <%= form_tag(books_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Books and Authors" %>
+      <%= submit_tag "Search", :name => nil %>
+    <% end %>
+  </div>
 </div>

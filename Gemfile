@@ -35,8 +35,6 @@ gem 'faker'
 gem 'paper_trail'
 # Cocoon for nested forms
 gem 'cocoon'
-# Trix editor for wysiwyg
-gem 'trix'
 # CKEditor for wysiwyg book summaries
 gem 'ckeditor'
 
