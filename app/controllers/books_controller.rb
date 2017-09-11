@@ -26,6 +26,7 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
+    @chapters = @book.chapters.order('id ASC')
   end
 
   # POST /books

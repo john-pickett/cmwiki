@@ -14,7 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require_tree .
 //= require trix
 //= require cocoon
 //= require material
+//= require ckeditor/init
+//= require_tree .

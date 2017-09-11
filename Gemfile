@@ -31,12 +31,14 @@ gem 'bootstrap-sass'
 gem 'devise'
 # Faker for database seeding
 gem 'faker'
-# Trix editor for wysiwyg wikis
-gem 'trix'
 # Paper Trail for wiki versioning
 gem 'paper_trail'
 # Cocoon for nested forms
 gem 'cocoon'
+# Trix editor for wysiwyg
+gem 'trix'
+# CKEditor for wysiwyg book summaries
+gem 'ckeditor'
 
 
 # Use Redis adapter to run Action Cable in production

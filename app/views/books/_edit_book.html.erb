@@ -46,9 +46,8 @@
     <div class="col-md-6">
       <div class="mdc-card">
         <div class="form-group">
-          <h4><%= f.label :published_date %></h4>
-          <p><em>Example: 1884</em></p>
-          <%= f.text_field :published_date %>
+          <h4><%= f.label :recommended_age %></h4>
+          <%= f.collection_select :recommended_age, Book::AGE_RANGES, :to_s, :to_s, :include_blank => true %>
         </div>
       </div>
     </div>
@@ -58,8 +57,9 @@
     <div class="col-md-6">
       <div class="mdc-card">
         <div class="form-group">
-          <h4><%= f.label :recommended_age %></h4>
-          <%= f.collection_select :recommended_age, Book::AGE_RANGES, :to_s, :to_s, :include_blank => true %>
+          <h4><%= f.label :published_date %></h4>
+          <p><em>Example: 1884</em></p>
+          <%= f.text_field :published_date %>
         </div>
       </div>
     </div>
@@ -92,19 +92,12 @@
       </div>
     </div>
 
-  <!-- <div class="form-group">
-    <%= f.label :body %>
-    <%= f.hidden_field :body, rows: 8, :id => "editor" %>
-    <trix-editor input="editor"></trix-editor>
-  </div> -->
-
   <%= f.fields_for :chapters do |chapter_form| %>
       <div class="mdc-card">
         <div class="form-group">
           <%= chapter_form.label "Chapter Summaries" %>
-          <p><em>This is a chapter summary.</em></p>
           <%= chapter_form.text_field :title %>
-          <%= chapter_form.text_area :summary %>
+          <%= chapter_form.cktext_area :summary %>
         </div>
       </div>
   <% end %>
