@@ -95,7 +95,6 @@
   <%= f.fields_for :chapters do |chapter_form| %>
       <div class="mdc-card">
         <div class="form-group">
-          <%= chapter_form.label "Chapter Summaries" %>
           <%= chapter_form.text_field :title %>
           <%= chapter_form.cktext_area :summary %>
         </div>

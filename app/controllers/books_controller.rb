@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy, :history]
 
   # GET /books
   # GET /books.json
@@ -26,6 +26,7 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
+    # this line doesn't seem to do anything =(
     @chapters = @book.chapters.order('id ASC')
   end
 

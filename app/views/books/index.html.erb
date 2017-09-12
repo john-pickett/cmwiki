@@ -2,32 +2,33 @@
 
 <h1>Books</h1>
 <div class="col-md-9">
+  <div class="mdc-card">
 
-  <table>
-    <thead>
-      <tr>
-        <th><%= link_to "Title", :sort => "title" %></th>
-        <th><%= link_to "Author", :sort => "author" %></th>
-        <th><%= link_to "Published Date", :sort => "published_date" %></th>
-        <th><%= link_to "Category", :sort => "category" %></th>
-        <th><%= link_to "Recommended Ages", :sort => "recommended_age" %></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @books.each do |book| %>
+    <table>
+      <thead>
         <tr>
-          <td><%= link_to book.title, book %></td>
-          <td><%= book.author %></td>
-          <td><%= book.published_date %></td>
-          <td><%= book.category %></td>
-          <td><%= book.recommended_age %></td>
+          <th><%= link_to "Title", :sort => "title" %></th>
+          <th><%= link_to "Author", :sort => "author" %></th>
+          <th><%= link_to "Published Date", :sort => "published_date" %></th>
+          <th><%= link_to "Category", :sort => "category" %></th>
+          <th><%= link_to "Recommended Ages", :sort => "recommended_age" %></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-  <br>
+      <tbody>
+        <% @books.each do |book| %>
+          <tr>
+            <td><%= link_to book.title, book %></td>
+            <td><%= book.author %></td>
+            <td><%= book.published_date %></td>
+            <td><%= book.category %></td>
+            <td><%= book.recommended_age %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
 </div>
 
 <div class="col-md-3 pull-right">

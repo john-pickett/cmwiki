@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Editing: <%= @book.title %></h1>
     <div class="col-md-9">
-      <%= render 'edit_book', book: @book %>
+      <%= render 'edit_book', book: @book, chapters: @chapters %>
   </div>
 
   <div class="col-md-3 pull-right">
