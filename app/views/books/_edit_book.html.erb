@@ -92,7 +92,7 @@
       </div>
     </div>
 
-  <%= f.fields_for :chapters do |chapter_form| %>
+  <%= f.fields_for :chapters, f.object.chapters.order(:created_at) do |chapter_form| %>
       <div class="mdc-card">
         <div class="form-group">
           <%= chapter_form.text_field :title %>

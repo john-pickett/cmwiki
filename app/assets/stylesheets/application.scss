@@ -87,3 +87,24 @@ footer {
     color: white;
     background-color: #8D5090;
 }
+
+.collapsable-anchor.collapsed {
+  .minus {
+    display: none !important;
+  }
+
+  .plus {
+    display: block !important;
+  }
+}
+
+.collapsable-anchor {
+  .minus {
+    display: block !important;
+  }
+
+  .plus {
+    display: none !important;
+
+  }
+}
