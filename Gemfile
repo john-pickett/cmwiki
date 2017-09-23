@@ -37,6 +37,8 @@ gem 'paper_trail'
 gem 'cocoon'
 # CKEditor for wysiwyg book summaries
 gem 'ckeditor'
+# Font Awesome for Icons
+gem 'font-awesome-sass'
 
 
 # Use Redis adapter to run Action Cable in production

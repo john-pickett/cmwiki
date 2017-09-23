@@ -26,8 +26,7 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
-    # this line doesn't seem to do anything =(
-    # @chapters = @book.chapters.order('id ASC')
+    
   end
 
   # POST /books
